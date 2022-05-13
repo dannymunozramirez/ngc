@@ -56,6 +56,7 @@ const NgcLanding = () => {
               </div>
               <br />
               <h3> Nueva Generacion de Constructores</h3>
+              <h3><strong> EN CONSTRUCCIÓN </strong></h3>
             </span>
           </div>
         </div>
