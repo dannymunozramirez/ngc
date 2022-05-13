@@ -32,7 +32,10 @@ const props = {
 const NgcLanding = () => {
   return (
     <>
-      <div style={{backgroundColor:'gray'}} className="bx--grid bx--grid--full-width landing-page  ">
+      <div
+        style={{ backgroundColor: "gray" }}
+        className="bx--grid bx--grid--full-width landing-page  "
+      >
         <div
           //
           style={
@@ -45,7 +48,6 @@ const NgcLanding = () => {
           className="cds--row landing-page__banner estilos-portada "
         >
           <div className="cds--col-lg-16">
-
             <span style={{ textAlign: "center" }}>
               <div>
                 <h1 className="landing-page__heading">
@@ -55,8 +57,10 @@ const NgcLanding = () => {
                 </h1>
               </div>
               <br />
-              <h3> Nueva Generacion de Constructores</h3>
-              <h3><strong> EN CONSTRUCCIÓN </strong></h3>
+              <h3> Nueva Generación de Constructores</h3>
+              <h3>
+                <strong> EN CONSTRUCCIÓN </strong>
+              </h3>
             </span>
           </div>
         </div>
@@ -64,43 +68,48 @@ const NgcLanding = () => {
           <div className="cds--col cds--no-gutter">
             <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
               <div className="bx--row landing-page__tab-content">
-                <div className="bx--col-lg-16">Introducción de la empresa</div>
+                <div className="bx--col-lg-16">
+                  Introducción de la empresa Lorem, ipsum dolor sit amet
+                  consectetur adipisicing elit. Asperiores, facilis sint. Dicta
+                  id voluptates nobis illum alias odio est quod architecto
+                  obcaecati excepturi aliquam nisi quibusdam, deserunt dolore.
+                  Id, asperiores!
+                </div>
               </div>
             </div>
           </div>
           <InfoSection heading={<h1>LOGO</h1>} className="landing-page__r3">
-          <InfoCard
-            heading="Redes Sociales"
-            body="Nos puedes ver en:"
-            icon={
-              <>
-                <LogoFacebook32 />
-                <LogoInstagram32 />
-              </>
-            }
-          />
-          <InfoCard
-            heading="Links de Interés"
-            body={
-              <>
-                <ul>
-                  <li>
-                    <a href="">Conservador de bienes raices</a>
-                  </li>
-                  <li>
-                    <a href="">SII</a>
-                  </li>
-                  <li>
-                    <a href="">CCHC</a>
-                  </li>
-                </ul>
-              </>
-            }
-            icon={<Application32 />}
-          />
-        </InfoSection>
+            <InfoCard
+              heading="Redes Sociales"
+              body="Nos puedes ver en:"
+              icon={
+                <>
+                  <LogoFacebook32 />
+                  <LogoInstagram32 />
+                </>
+              }
+            />
+            <InfoCard
+              heading="Links de Interés"
+              body={
+                <>
+                  <ul>
+                    <li>
+                      <a href="">Conservador de bienes raices</a>
+                    </li>
+                    <li>
+                      <a href="">SII</a>
+                    </li>
+                    <li>
+                      <a href="">CCHC</a>
+                    </li>
+                  </ul>
+                </>
+              }
+              icon={<Application32 />}
+            />
+          </InfoSection>
         </div>
-        
       </div>
     </>
   );
