@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./app.scss";
+import NgcHeader from "./components/header";
+import { Route, Routes } from "react-router-dom";
+import NgcLanding from "./content/ngcLanding";
+import Content from "carbon-components-react/lib/components/UIShell/Content";
+import { PersonFavorite32, Application32, Globe32 } from "@carbon/icons-react";
+import { InfoSection, InfoCard } from "./components/footer";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <NgcHeader />
 
-export default App;
+      <Content>
+        <Routes>
+          <Route path="/" element={<NgcLanding />} />
+          {/* <Route path="about" element={<About />} /> */}
+        </Routes>
+      </Content>
+    </>
+  );
+};
