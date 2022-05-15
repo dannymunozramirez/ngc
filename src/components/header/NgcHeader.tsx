@@ -7,22 +7,16 @@ import {
   HeaderMenuButton,
   HeaderMenuItem,
   HeaderGlobalBar,
-  HeaderGlobalAction,
   SkipToContent,
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
 } from "carbon-components-react";
-import {
-  AppSwitcher20,
-  Notification20,
-  UserAvatar20,
-} from "@carbon/icons-react";
 
-const TutorialHeader = () => (
+const NgcHeader = () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <Header aria-label="Carbon Tutorial">
+      <Header>
         <SkipToContent />
 
         <HeaderMenuButton
@@ -60,4 +54,4 @@ const TutorialHeader = () => (
   />
 );
 
-export default TutorialHeader;
+export default NgcHeader;
