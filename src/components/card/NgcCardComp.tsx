@@ -1,7 +1,23 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
-export const NgcCardComp = () => {
+interface ObjectSelected {
+  id: 0;
+  name: "";
+  desc: "";
+  pic: "";
+}
+
+interface Props {
+  showModal?: MouseEventHandler<HTMLAnchorElement>;
+  casas?: {
+    id: number;
+    name: string;
+    desc: string;
+    pic: string;
+  };
+}
+export const NgcCardComp = ({ showModal, casas }: Props) => {
   return (
     <Card id="card-container" style={{ width: "18rem" }}>
       <Card.Img
@@ -9,11 +25,8 @@ export const NgcCardComp = () => {
         src="https://previews.123rf.com/images/jlombard/jlombard1511/jlombard151100028/49190648-casa-en-construcci%C3%B3n.jpg"
       />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title>{casas!.name}</Card.Title>
+        <Card.Text>{casas!.desc}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroupItem>Cras justo odio</ListGroupItem>
@@ -21,7 +34,11 @@ export const NgcCardComp = () => {
         <ListGroupItem>Vestibulum at eros</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
+        {/* On click submit boolean to redux in order to show modal in NgcProyects */}
+
+        <Card.Link onClick={showModal} href="#">
+          Card Link
+        </Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>

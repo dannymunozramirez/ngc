@@ -1,17 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // Take in a phrase and separate the third word in an array
 function createArrayFromPhrase(phrase) {
-  const splitPhrase = phrase.split(" ");
+  const splitPhrase = phrase.split(' ');
   const thirdWord = splitPhrase.pop();
-  return [splitPhrase.join(" "), thirdWord];
+  return [splitPhrase.join(' '), thirdWord];
 }
 
-const InfoSection = (props) => (
-  <section
-    id="info-client-container"
-    className={`bx--row ${props.className} info-section`}
-  >
+const InfoSection = props => (
+  <section id='info-client-container' className={`bx--row ${props.className} info-section`}>
     <div className="bx--col-md-8 bx--col-lg-4 bx--col-xlg-4">
       <h3 className="info-section__heading">{props.heading}</h3>
     </div>
@@ -19,7 +16,7 @@ const InfoSection = (props) => (
   </section>
 );
 
-const InfoCard = (props) => {
+const InfoCard = props => {
   const splitHeading = createArrayFromPhrase(props.heading);
 
   return (

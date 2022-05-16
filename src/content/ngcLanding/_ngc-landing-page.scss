@@ -99,11 +99,12 @@
   }
 
   #container-centered {
-    background-color: red;
-    display: "flex";
-    justify-content: "center";
-    align-items: "center";
-    text-align: center;
+    // background-color: red;
+    // display: "flex";
+    // justify-content: "center";
+    // align-items: "center";
+    // text-align: center;
+    margin-left: 8%;
   }
 }
 
@@ -115,7 +116,7 @@
     margin-bottom: 3.2%;
   }
   #container-centered {
-    margin-bottom: 23;
+    margin-bottom: 3;
     display: "flex";
     justify-content: "center";
     align-items: "center";
