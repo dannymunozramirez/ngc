@@ -1,21 +1,16 @@
 import React, { MouseEventHandler } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-
+import { useCard } from "../../customHooks/useCard";
 interface ObjectSelected {
-  id: 0;
-  name: "";
-  desc: "";
-  pic: "";
+  id: string;
+  name: string;
+  desc: string;
+  pic: string;
 }
 
 interface Props {
   showModal?: MouseEventHandler<HTMLAnchorElement>;
-  casas?: {
-    id: number;
-    name: string;
-    desc: string;
-    pic: string;
-  };
+  casas?: ObjectSelected;
 }
 export const NgcCardComp = ({ showModal, casas }: Props) => {
   return (
@@ -29,9 +24,9 @@ export const NgcCardComp = ({ showModal, casas }: Props) => {
         <Card.Text>{casas!.desc}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroupItem>Cras justo odio</ListGroupItem>
+        {/* <ListGroupItem>Cras justo odio</ListGroupItem>
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-        <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        <ListGroupItem>Vestibulum at eros</ListGroupItem> */}
       </ListGroup>
       <Card.Body>
         {/* On click submit boolean to redux in order to show modal in NgcProyects */}

@@ -1,57 +1,51 @@
-import {
-  Dropdown,
-  MultiSelect,
-  Select,
-  SelectItem,
-  TextInput,
-} from "carbon-components-react";
 import React, { useState } from "react";
 import { Container, Col, Row, Modal, Button } from "react-bootstrap";
+import { useCard } from "../../customHooks/useCard";
 import { NgcCardComp } from "../card/NgcCardComp";
 
 interface Props {
   element?: JSX.Element;
 }
 interface ObjectSelected {
-  id: 0;
-  name: "";
-  desc: "";
-  pic: "";
+  id: string;
+  name: string;
+  desc: string;
+  pic: string;
 }
 
 const casas = [
   {
-    id: 0,
+    id: "0",
     name: "casa 1",
     desc: "casa 1 descripción",
     pic: "foto",
   },
   {
-    id: 1,
+    id: "1",
     name: "casa 2",
     desc: "casa 2 descripción",
     pic: "foto",
   },
   {
-    id: 2,
+    id: "2",
     name: "casa 3",
     desc: "casa 3 descripción",
     pic: "foto",
   },
   {
-    id: 0,
+    id: "3",
     name: "casa 4",
     desc: "casa 4 descripción",
     pic: "foto",
   },
   {
-    id: 1,
+    id: "4",
     name: "casa 5",
     desc: "casa 5 descripción",
     pic: "foto",
   },
   {
-    id: 2,
+    id: "5",
     name: "casa 6",
     desc: "casa 6 descripción",
     pic: "foto",
@@ -59,52 +53,45 @@ const casas = [
 ];
 
 export const NgcContainerComp = ({ element }: Props) => {
-  const [objectSelected, setObjectSelected] = useState({
-    id: 0,
-    name: "",
-    desc: "",
-    pic: "",
-  });
+  const { objectClickHandler, infoObjectClicked } = useCard();
+
+  const selectedHouseHandler = (casaSeleccionada: ObjectSelected) => {
+    objectClickHandler(casaSeleccionada);
+    console.log("$$$$$$$$$$: " + casaSeleccionada);
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   const handleShow = (item: any) => {
     setShow(true);
-    setObjectSelected({
-      id: item.id,
-      name: item.name,
-      desc: item.desc,
-      pic: item.pic,
-    });
+    selectedHouseHandler(item);
   };
 
-  const objectSelectedHandler = (item: any) => {
-    setObjectSelected({
-      id: item.id,
-      name: item.name,
-      desc: item.desc,
-      pic: item.pic,
-    });
-  };
   return (
     <>
       <Container id="container-centered">
         <Row>
-          {casas.map((item) => (
+          {casas.map((item: any) => (
             <Col style={{ margin: 23 }}>
               <>
-                <NgcCardComp showModal={handleShow} casas={item} />
+                <NgcCardComp
+                  showModal={() => {
+                    handleShow(item);
+                  }}
+                  casas={item}
+                />
               </>
 
               {show && (
                 <Modal style={{ margin: 40 }} show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{objectSelected.name}</Modal.Title>
+                    <Modal.Title>{infoObjectClicked.name}</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <NgcCardComp
                       showModal={handleShow}
-                      casas={objectSelected}
+                      casas={infoObjectClicked}
                     />
                   </Modal.Body>
                   <Modal.Footer>

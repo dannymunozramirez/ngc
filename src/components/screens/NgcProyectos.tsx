@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { NgcCardComp } from "../card/NgcCardComp";
 import { NgcContainerComp } from "../containers/NgcContainerComp";
 
 export const NgcProyectos = () => {
@@ -13,7 +10,7 @@ export const NgcProyectos = () => {
               <div className="bx--col-lg-16">
                 {/* TODO - MODAL */}
 
-                <NgcContainerComp  />
+                <NgcContainerComp />
               </div>
             </div>
           </div>
